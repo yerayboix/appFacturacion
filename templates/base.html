@@ -8,11 +8,80 @@
     <!-- Importa los archivos CSS de Bootstrap -->
     <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
     <!-- Otros estilos personalizados si los tienes -->
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link href="{% static 'DataTables/datatables.min.css' %}" rel="stylesheet">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-auto">
+                <!-- Aquí está tu sidebar -->
+                <div class="flex-shrink-0 p-3" style="width: 200px;">
+                    <a href="/" class="d-flex align-items-center pb-3 link-body-emphasis text-decoration-none border-bottom">
+                      <span class="fs-5 fw-semibold">appFacturación</span>
+                    </a>
+                </div>
+                <ul class="bd-links-nav px-3 list-unstyled">
+                    <li class="bd-links-group">
+                        <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                          Resumen
+                        </strong>
+                        <ul class="list-unstyled fw-normal pb-2 small">
+                            <li class="p-1">
+                                <a class="btn btn-sm btn-transparent btn-hover-custom" href="#" role="button" style="--bs-btn-font-size: .875rem;">Ver resumen</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="bd-links-group">
+                        <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                          Facturas
+                        </strong>
+                        <ul class="list-unstyled fw-normal pb-2 small">
+                            <li class="p-1">
+                                <a class="btn btn-sm btn-transparent btn-hover-custom" href="#" role="button" style="--bs-btn-font-size: .875rem;">Listado</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="bd-links-group">
+                        <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                          Pedidos
+                        </strong>
+                        <ul class="list-unstyled fw-normal pb-2 small">
+                            <li class="p-1">
+                                <a class="btn btn-sm btn-transparent btn-hover-custom" href="#" role="button" style="--bs-btn-font-size: .875rem;">Listado</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="bd-links-group">
+                        <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                          Clientes
+                        </strong>
+                        <ul class="list-unstyled fw-normal pb-2 small">
+                            <li class="p-1">
+                                <a class="btn btn-sm btn-transparent btn-hover-custom" href="#" role="button" style="--bs-btn-font-size: .875rem;">Listado</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="bd-links-group">
+                        <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+                          Libros
+                        </strong>
+                        <ul class="list-unstyled fw-normal pb-2 small">
+                            <li class="p-1">
+                                <a class="btn btn-sm btn-transparent btn-hover-custom" href="{% url 'lista_libros' %}" role="button" style="--bs-btn-font-size: .875rem;">Listado</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-auto">
+                <!-- Aquí está el contenido principal -->
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
     <!-- Scripts de Bootstrap y otros scripts personalizados -->
     <script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'DataTables/datatables.min.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+.btn-transparent {
+    border: none;
+    background: none;
+    color: #000; /* Color del texto */
+}
+
+.btn-hover-custom {
+    transition: color 0.3s;
+}
+
+.btn-hover-custom:hover {
+    background: #F1EAFE; /* Color que quieres cuando pasas el ratón por encima */
+    color: #000;
+}
