@@ -10,6 +10,10 @@
     <!-- Otros estilos personalizados si los tienes -->
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
     <link href="{% static 'DataTables/datatables.min.css' %}" rel="stylesheet">
+    <!-- Scripts de Bootstrap y otros scripts personalizados -->
+    
+    <script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'DataTables/datatables.min.js' %}"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -74,14 +78,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-auto">
+            <div class="col-md-8">
                 <!-- Aquí está el contenido principal -->
                 {% block content %}{% endblock %}
             </div>
         </div>
     </div>
-    <!-- Scripts de Bootstrap y otros scripts personalizados -->
-    <script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'DataTables/datatables.min.js' %}"></script>
 </body>
 </html>

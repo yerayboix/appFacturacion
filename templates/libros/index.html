@@ -1,16 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
                 <h2 class="my-4">Listado de libros</h2>
-                
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearLibroModal">
-                    Crear Libro
+                <button type="button" class="btn btn-sm btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#crearLibroModal">
+                    Nuevo libro
                 </button>
+                <div class="table-responsive">
+                    <table id="tablaLibros" class="table table-striped" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>PVP</th>
+                                <th>Precio</th>
+                                <th>Descuento</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for libro in libros %}
+                                <tr>
+                                    <td>{{ libro.titulo }}</td>
+                                    <td>{{ libro.precio_iva }} €</td>
+                                    <td>{{ libro.precio }} €</td>
+                                    <td>{{ libro.descuento }} %</td>
+                                    <td>{{ libro.cantidad }}</td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
             </div>
         </div>
     </div>
 {% include 'libros/modales/crear.html' %}
+
+<script>
+    $(document).ready(function () {
+    // Inicializamos el datatables
+        var tablaLibros = $('#tablaLibros').DataTable({
+            autoFill: true,
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.13.2/i18n/es-ES.json'
+            },
+            pageLength: 9,
+        });
+    });
+
+</script>
 {% endblock %}
