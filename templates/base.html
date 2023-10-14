@@ -1,0 +1,18 @@
+{% load static %}
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importa los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+    <!-- Otros estilos personalizados si los tienes -->
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    <!-- Scripts de Bootstrap y otros scripts personalizados -->
+    <script src="{% static 'bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
