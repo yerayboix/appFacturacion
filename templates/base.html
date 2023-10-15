@@ -62,7 +62,7 @@
                         </strong>
                         <ul class="list-unstyled fw-normal pb-2 small">
                             <li class="p-1">
-                                <a class="btn btn-sm btn-transparent btn-hover-custom" href="#" role="button" style="--bs-btn-font-size: .875rem;">Listado</a>
+                                <a class="btn btn-sm btn-transparent btn-hover-custom" href="/clientes/" role="button" style="--bs-btn-font-size: .875rem;">Listado</a>
                             </li>
                         </ul>
                     </li>
@@ -84,5 +84,39 @@
             </div>
         </div>
     </div>
+    <!-- Tu modal de confirmación -->
+    <div class="modal fade" id="confirmModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que quieres realizar esta acción?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirmButton">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función genérica para mostrar el modal de confirmación
+        function mostrarModalConfirmacion(url) {
+            var modal = new bootstrap.Modal(document.getElementById('confirmModal'), {
+                keyboard: false
+            });
+            modal.show();
+
+            // Añade un listener al botón de confirmación en el modal
+            document.getElementById('confirmButton').onclick = function () {
+                window.location.href = url; // Cambia la URL aquí según sea necesario
+            };
+        }
+    </script>
+
 </body>
 </html>

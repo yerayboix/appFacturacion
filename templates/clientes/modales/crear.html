@@ -1,0 +1,51 @@
+<!-- Modal Creación Cliente -->
+<div class="modal fade" id="crearClienteModal" tabindex="-1" aria-labelledby="crearClienteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="crearClienteModalLabel">Añadir un nuevo cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="{% url 'crear_cliente' %}">
+                {% csrf_token %}
+            <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="domicilio" class="form-label">Domicilio:</label>
+                        <input type="text" class="form-control" id="domicilio" name="domicilio" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cp" class="form-label">CP:</label>
+                        <input type="number" class="form-control" id="cp" name="cp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ciudad" class="form-label">Ciudad:</label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono:</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipo" class="form-label">Tipo:</label>
+                        <select class="form-select" name="tipo" id="tipo">
+                            <option value="PAR" selected>Particular</option>
+                            <option value="PRO">Profesional</option>
+                        </select>                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="nif" class="form-label">NIF:</label>
+                        <input type="text" class="form-control" id="nif" name="nif">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Añadir cliente</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

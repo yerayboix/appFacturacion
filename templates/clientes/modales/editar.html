@@ -1,0 +1,51 @@
+<!-- Modal Edición Cliente -->
+<div class="modal fade" id="editarClienteModal" tabindex="-1" aria-labelledby="editarClienteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarClienteModalLabel">Editar cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" id="form_editar_cliente" action="XXXXX">
+                {% csrf_token %}
+            <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombre_editar" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre_editar" name="nombre_editar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="domicilio_editar" class="form-label">Domicilio:</label>
+                        <input type="text" class="form-control" id="domicilio_editar" name="domicilio_editar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cp_editar" class="form-label">CP:</label>
+                        <input type="number" class="form-control" id="cp_editar" name="cp_editar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ciudad_editar" class="form-label">Ciudad:</label>
+                        <input type="text" class="form-control" id="ciudad_editar" name="ciudad_editar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono_editar" class="form-label">Teléfono:</label>
+                        <input type="text" class="form-control" id="telefono_editar" name="telefono_editar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipo_editar" class="form-label">Tipo:</label>
+                        <select class="form-select" name="tipo_editar" id="tipo_editar">
+                            <option value="PAR" selected>Particular</option>
+                            <option value="PRO">Profesional</option>
+                        </select>                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="nif_editar" class="form-label">NIF:</label>
+                        <input type="text" class="form-control" id="nif_editar" name="nif_editar">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Editar cliente</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
