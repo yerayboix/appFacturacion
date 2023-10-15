@@ -1,0 +1,42 @@
+<!-- Modal Creación Libro -->
+<div class="modal fade" id="editarLibroModal" tabindex="-1" aria-labelledby="editarLibroModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarLibroModalLabel">Editar libro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" id="form_editar_libro" action="XXXXXX">
+                {% csrf_token %}
+            <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="titulo_editar" class="form-label">Título:</label>
+                        <input type="text" class="form-control" value="XXXXX" id="titulo_editar" name="titulo_editar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cantidad_editar" class="form-label">Cantidad:</label>
+                        <input type="number" class="form-control" value="0" id="cantidad_editar" name="cantidad_editar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="precio_editar" class="form-label">Precio:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">€</span>
+                            <input type="number" step="0.01" class="form-control" value="0" id="precio_editar" name="precio_editar" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descuento_editar" class="form-label">Descuento:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">%</span>
+                            <input type="number" step="0.01" class="form-control" value="0" id="descuento_editar" name="descuento_editar" required>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
